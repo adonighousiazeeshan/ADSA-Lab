@@ -60,12 +60,15 @@ void selectionSort(int arr[], int n) {
 }
 
 // 4. Shell Sort
+
+//0123456
+//   g
 void shellSort(int arr[], int n) {
-    for (int gap = n / 2; gap > 0; gap /= 2) {
-        for (int i = gap; i < n; i++) {
+    for (int g = n / 2; g > 0; g /= 2) {
+        for (int i = g; i < n; i++) {
             int temp = arr[i], j;
-            for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
-                arr[j] = arr[j - gap];
+            for (int j = i; j >= g && arr[j-g] >temp;j-=g)
+                arr[j]=arr[j-g];
             arr[j] = temp;
         }
     }
